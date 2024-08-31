@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model CarbonFootprint {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  value     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WaterUsage {
+  id         Int      @id @default(autoincrement())
+  date       DateTime
+  value      Float
+  waterLevel Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Recycling {
+  id            Int      @id @default(autoincrement())
+  date          DateTime
+  recyclable    Int
+  nonRecyclable Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model EnergyConsumption {
+  id          Int      @id @default(autoincrement())
+  consumption Float
+  date        DateTime
+  cost        Float
+}
+
+model Abnormality {
+  id        Int      @id @default(autoincrement())
+  item      String
+  status    String
+  type      String
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
