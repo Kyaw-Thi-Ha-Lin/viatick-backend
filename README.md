@@ -35,3 +35,35 @@ Welcome to the Viatick Backend repository! This project provides the backend ser
    ```bash
    git clone https://github.com/Kyaw-Thi-Ha-Lin/viatick-backend.git
 
+2. **Navigate to the Project Directory**
+
+   ```bash
+   cd viatick-backend
+
+3. **Install Dependencies**
+
+   ```bash
+   npm install
+
+4. **Copy .env.example**
+
+   ```bash
+   cp .env.example .env
+
+
+5. **Copy .env.example**
+
+   ```bash
+   cp .env.example .env
+
+5. **Set up DB in .env**
+
+6. **Run Migration**
+
+   ```bash
+   npx prisma migrate dev --name=init
+
+7. **Seeding Database**
+
+   ```bash
+   npx prisma db seed
