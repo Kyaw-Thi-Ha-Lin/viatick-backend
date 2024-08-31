@@ -9,7 +9,7 @@ export async function carbonSummary(
     const summary = await getCarbonFootPrint();
     res.status(200).json({
       status: "success",
-      message: "Energy summary retrieved successfully",
+      message: "Carbon summary retrieved successfully",
       data: summary,
     });
   } catch (error) {

@@ -2,11 +2,11 @@ import { Request, Response } from "express";
 import { getRecycleSummary } from "../models/Recycling";
 export async function recycle(req: Request, res: Response): Promise<void> {
   try {
-    const waterLevel = await getRecycleSummary();
+    const recycle = await getRecycleSummary();
     res.status(200).json({
       status: "success",
-      message: "Water usage retrieved successfully",
-      data: waterLevel,
+      message: "Recycle summary retrieved successfully",
+      data: recycle,
     });
   } catch (error) {
     res.status(500).json({

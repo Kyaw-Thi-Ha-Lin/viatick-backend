@@ -2,11 +2,11 @@ import { Request, Response } from "express";
 import { getWaterLevel, getWaterUsage } from "../models/WaterUsage";
 export async function waterLevel(req: Request, res: Response): Promise<void> {
   try {
-    const waterLevel = await getWaterLevel();
+    const water_level = await getWaterLevel();
     res.status(200).json({
       status: "success",
       message: "Water Level retrieved successfully",
-      data: waterLevel,
+      data: water_level,
     });
   } catch (error) {
     res.status(500).json({
@@ -19,11 +19,11 @@ export async function waterLevel(req: Request, res: Response): Promise<void> {
 
 export async function waterUsage(req: Request, res: Response): Promise<void> {
   try {
-    const waterLevel = await getWaterUsage();
+    const water_usage = await getWaterUsage();
     res.status(200).json({
       status: "success",
       message: "Water usage retrieved successfully",
-      data: waterLevel,
+      data: water_usage,
     });
   } catch (error) {
     res.status(500).json({

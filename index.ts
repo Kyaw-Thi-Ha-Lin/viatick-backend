@@ -1,11 +1,21 @@
 import express, { Request, Response } from "express";
 import { prisma } from "./prismaClient";
 import { energyRouter } from "./routers/energy";
+import { recycleRouter } from "./routers/recycle";
+import { waterRouter } from "./routers/water";
+import { carbonRouter } from "./routers/carbon";
+import { abnormalRouter } from "./routers/abnormal";
+
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use("/report", energyRouter);
+
+app.use("/energy", energyRouter);
+app.use("/recycle", recycleRouter);
+app.use("/water", waterRouter);
+app.use("/carbon", carbonRouter);
+app.use("/abnormal", abnormalRouter);
 
 app.get("/info", (req: Request, res: Response) => {
   res.json({ msg: "Viatick API" });
