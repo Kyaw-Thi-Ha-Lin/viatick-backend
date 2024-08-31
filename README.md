@@ -50,12 +50,6 @@ Welcome to the Viatick Backend repository! This project provides the backend ser
    ```bash
    cp .env.example .env
 
-
-5. **Copy .env.example**
-
-   ```bash
-   cp .env.example .env
-
 5. **Set up DB in .env**
 
 6. **Run Migration**
