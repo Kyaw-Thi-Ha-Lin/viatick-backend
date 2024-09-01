@@ -49,7 +49,7 @@ model EnergyConsumption {
 model Abnormality {
   id        Int      @id @default(autoincrement())
   item      String
-  status    String
+  status    Int
   type      String
   date      DateTime
   createdAt DateTime @default(now())

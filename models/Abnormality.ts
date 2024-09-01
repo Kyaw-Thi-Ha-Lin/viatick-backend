@@ -3,7 +3,7 @@ import { getQueryDate } from "../utils/helpers";
 
 interface AbnormalData {
   item: string;
-  status: string;
+  status: boolean;
   type: string;
   date: Date;
 }
@@ -27,8 +27,14 @@ export async function getAbnormality(): Promise<AbnormalData[]> {
         date: true,
       },
     });
-    return abnormalities;
+    const convertedAbnormalities = abnormalities.map((abnormality) => ({
+      ...abnormality,
+      status: Boolean(abnormality.status),
+    }));
+
+    return convertedAbnormalities;
   } catch (error) {
+    console.log(error);
     throw new Error("Failed to fetch abnormalities");
   }
 }
